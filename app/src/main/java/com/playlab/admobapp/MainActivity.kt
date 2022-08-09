@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             loadAd(adViewFB, "FULL_BANNER")
             loadAd(adViewB, "BANNER")
             loadAd(adViewLB, "LARGE_BANNER")
+            loadAd(adViewMR, "MEDIUM_RECTANGLE")
         }
 
 
