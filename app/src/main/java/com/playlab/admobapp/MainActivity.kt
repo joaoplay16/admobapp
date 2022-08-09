@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             loadAd(adViewB, "BANNER")
             loadAd(adViewLB, "LARGE_BANNER")
             loadAd(adViewMR, "MEDIUM_RECTANGLE")
+            loadAd(adViewSB, "SMART_BANNER")
         }
 
 
