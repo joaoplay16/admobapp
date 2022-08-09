@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
             loadAd(adViewMR, "MEDIUM_RECTANGLE")
             loadAd(adViewSB, "SMART_BANNER")
         }
-
-
     }
 
     private fun loadAd(adView: AdView, type: String?){
