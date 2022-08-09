@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         with(binding){
             loadAd(adViewFB, "FULL_BANNER")
             loadAd(adViewB, "BANNER")
+            loadAd(adViewLB, "LARGE_BANNER")
         }
 
 
