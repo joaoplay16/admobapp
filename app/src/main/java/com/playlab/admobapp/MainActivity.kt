@@ -16,38 +16,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadAd(binding.adView)
+        with(binding){
+            loadAd(adViewFB, "FULL_BANNER")
+            loadAd(adViewB, "BANNER")
+        }
+
+
     }
 
-    private fun loadAd(adView: AdView){
+    private fun loadAd(adView: AdView, type: String?){
         adView.loadAd(AdRequest.Builder().build())
 
         adView.adListener = object: AdListener(){
             val TAG = "MYADMOB"
             override fun onAdLoaded() {
-                Log.d(TAG, "onAdLoaded")
+                Log.d(TAG, "onAdLoaded - type $type")
             }
 
             override fun onAdFailedToLoad(p0: LoadAdError) {
-                Log.d(TAG, "onAdFailedToLoad")
+                Log.d(TAG, "onAdFailedToLoad - type $type")
 
             }
 
             override fun onAdOpened() {
-                Log.d(TAG,"onAdOpened")
+                Log.d(TAG,"onAdOpened - type $type")
 
             }
 
             override fun onAdClicked() {
-                Log.d(TAG, "onAdClicked")
+                Log.d(TAG, "onAdClicked - type $type")
             }
 
             override fun onAdClosed() {
-                Log.d(TAG, "onAdClosed")
+                Log.d(TAG, "onAdClosed - type $type")
             }
 
             override fun onAdImpression() {
-                Log.d(TAG, "onAdImpression")
+                Log.d(TAG, "onAdImpression - type $type")
             }
         }
     }
