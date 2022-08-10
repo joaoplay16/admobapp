@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AdMobApp"
         tools:targetApi="31">
         <activity
+            android:name=".InterstitialRewardAdActivity"
+            android:exported="false" />
+        <activity
             android:name=".RewardAdActivity"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".InterstitialRewardAdActivity"
+            android:name=".WebViewAdActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,15 +40,15 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
-
-        <!--The flag below optimizes the MobileAds.initialize() initialization call:-->
+        <!-- The flag below optimizes the MobileAds.initialize() initialization call: -->
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
-            android:value="true"/>
-        <!--The flag below optimizes ad load calls for all ad formats:-->
+            android:value="true" />
+        <!-- The flag below optimizes ad load calls for all ad formats: -->
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
-            android:value="true"/>
+            android:value="true" />
+
     </application>
 
 </manifest>
