@@ -13,6 +13,7 @@ class RewardAdActivity : AppCompatActivity() {
     private val TAG = "MYADMOB"
     private lateinit var binding: ActivityRewardAdBinding
     private var mRewardedAd: RewardedAd? = null
+    private var rewardAmount : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRewardAdBinding.inflate(layoutInflater)
@@ -20,6 +21,7 @@ class RewardAdActivity : AppCompatActivity() {
         MobileAds.initialize(this)
         loadRewardedAd()
 
+        binding.textView.text = getString(R.string.coins, 0)
         binding.button.setOnClickListener {
             showRewardedAd()
         }
@@ -89,8 +91,9 @@ class RewardAdActivity : AppCompatActivity() {
             mRewardedAd?.show(this, object: OnUserEarnedRewardListener {
 
                 override fun onUserEarnedReward(rewardItem: RewardItem) {
-                    var rewardAmount = rewardItem.amount
+                    rewardAmount += rewardItem.amount
                     var rewardType = rewardItem.type
+                    binding.textView.text = getString(R.string.coins, rewardAmount)
                     Log.d(TAG, "User earned the reward. amount $rewardAmount type $rewardType")
                 }
 
