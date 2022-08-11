@@ -2,6 +2,7 @@ package com.playlab.admobapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebViewClient
 import com.google.android.gms.ads.MobileAds
 import com.playlab.admobapp.databinding.ActivityWebViewAdBinding
 
@@ -17,5 +18,6 @@ class WebViewAdActivity : AppCompatActivity() {
         MobileAds.registerWebView(binding.webView)
 
         binding.webView.loadUrl("https://webview-api-for-ads-test.glitch.me/")
+
     }
 }

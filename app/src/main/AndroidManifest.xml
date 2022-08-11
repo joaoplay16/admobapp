@@ -48,7 +48,10 @@
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
             android:value="true" />
-
+        <!-- Bypass APPLICATION_ID check for WebView API for Ads -->
+        <meta-data
+            android:name="com.google.android.gms.ads.INTEGRATION_MANAGER"
+            android:value="webview"/>
     </application>
 
 </manifest>
